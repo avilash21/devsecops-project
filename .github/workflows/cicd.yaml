@@ -99,8 +99,8 @@ jobs :
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/tictactoegame
           tags: |
-            type=sha,format=long
-            type=ref,event=branch
+            type=sha,format=long:
+            type=ref,event=branch:
             latest
 
       - name: Build and push Docker image
