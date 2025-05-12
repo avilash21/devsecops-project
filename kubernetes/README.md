@@ -2,6 +2,19 @@
 
 This directory contains Kubernetes manifests for deploying the Tic Tac Toe application.
 
+## Login to Argo CD
+
+1. Access the argocd installation to install it.
+2. After that use kubectl get svc -n argocd to get the svc
+3. Use port forwarding and in security groups create for all traffic(TCP FOR THE PORT X) for any port
+4. kubectl port-forward svc/argocd-server X:80 -n  argocd --address 0.0.0.0
+5. kubectl get secrets -n argocd
+6. kubectl edit secrets argocd-initial-admin-secret -n argocd
+7. Get the encoded password and decode it
+8. echo **PASSWORD** | base64 --decode
+
+
+
 ## Components
 
 1. **Deployment** - Manages the application pods with scaling and update strategies
