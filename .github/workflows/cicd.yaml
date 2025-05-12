@@ -145,6 +145,12 @@ jobs :
           echo "Updated deployment to use image: ${IMAGE}"
           grep -A 1 "image:" kubernetes/deployment.yaml
       
+      # Step 3: Configure Git
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
       - name: Commit and push changes
         run: |
           git add kubernetes/deployment.yaml
