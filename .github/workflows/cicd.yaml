@@ -124,7 +124,7 @@ jobs :
       env :
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         REPO: tictactoegame
-        IMAGE_TAG: ${{ github.ref_name }}-${{ github.sha }
+        IMAGE_TAG: ${{ github.ref_name }}-${{ github.sha }}
       
       steps :
       - name : Checkout code
